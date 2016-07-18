@@ -1,4 +1,4 @@
-<img src="./reify.png" alt="reify" style="width:200px;" />
+![](https://bitbucket.org/cashstar/reify/raw/master/reify.png)
 
 # re·i·fy /ˈrēəˌfī/
 
