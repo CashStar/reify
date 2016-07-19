@@ -10,9 +10,9 @@ const AppHeader = (props) => {
         <header className='nav'>
           <div className='container'>
             <div className='nav-left'>
-              <a className='nav-item'>
-                <h1 className='title is-1'><Link to='/' className='nav-item is-active'>Reify</Link></h1>
-              </a>
+              <Link to='/' className='nav-item is-active'>
+                <h1 className='title is-1'>Reify</h1>
+              </Link>
             </div>
             <span className='nav-toggle'>
               <span></span>

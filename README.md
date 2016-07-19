@@ -54,6 +54,7 @@ It's set up with TDD in mind and is configured with hot module reloading enabled
 * [Redux Test Recorder](https://github.com/conorhastings/redux-test-recorder) automagically generate tests for your reducers based on the actions in your app
 * [raven-js](https://github.com/getsentry/raven-js) allows us to log client app errors to [Sentry](https://getsentry.com)
 * [nock](https://github.com/node-nock/nock) HTTP mocking library
+* [jsdom](https://github.com/tmpvar/jsdom) mock the DOM
 
 ## More Info
 For an explanation of the patterns used, see [PATTERNS.md](PATTERNS.md). To get started using Reify, see [STARTUP.md](STARTUP.md). To learn how the demo app works, see [DEMO.md](DEMO.md). To learn how to contribute, see [CONTRIBUTING.md](CONTRIBUTING.md).

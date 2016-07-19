@@ -5,7 +5,10 @@ import utils from 'react-addons-test-utils';
 
 import { shallow } from 'enzyme';
 
-import App from '../App';
+import AppHeader from '../AppHeader';
 
 
-test.todo('test root-level App component');
+test('renders', t => {
+  const wrapper = shallow(<AppHeader />);
+  t.is(wrapper.find('section').length, 1);
+});

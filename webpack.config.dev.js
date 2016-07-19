@@ -43,6 +43,8 @@ config = {
     loaders: [ // transformations to apply to a resource in your app
       // transform all .js files with the babel loader
       {test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader'},
+      // transform all css files with the style loader's css loader
+      {test: /\.css$/, include: src, loader: 'style-loader!css-loader'},
       // transform all stylus files with the style loader's stylus loader
       {test: /\.styl$/, include: src, loader: 'style-loader!css-loader!stylus-loader'},
       // transform all sass files with the style loader's sass loader

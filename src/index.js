@@ -4,7 +4,7 @@ import Raven from 'raven-js';
 import { render } from 'react-dom';
 
 import appRoutes from 'app/appRoutes';
-import { sentryUrl, logException } from 'app/appConfig';
+import { sentryUrl, logException } from 'utils/sentryConfig';
 
 
 // set up Raven for logging errors to Sentry
