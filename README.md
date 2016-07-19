@@ -20,7 +20,7 @@ Reify's goals are focused primarily on developer experience and code quality. It
 * allow you to build the client in isolation
 * make it easy to go from development to production
 
-It's set up with TDD in mind and is configured with hot module reloading enabled for a painless developer experience. It also includes a few demo apps that you can examine and learn from.
+It's set up with TDD in mind and is configured with hot module reloading enabled for a painless developer experience. It also includes a simple demo app that you can examine and learn from.
 
 ### Core libraries
 * [Babel](https://babeljs.io/) lets us use future JS language features now
@@ -35,24 +35,27 @@ It's set up with TDD in mind and is configured with hot module reloading enabled
 * [react-helmet](https://github.com/nfl/react-helmet) to manage title and meta tag info
 * [lru-memoize](https://github.com/erikras/lru-memoize) to speed up form validation
 * [multireducer](https://github.com/erikras/multireducer) to combine single reducers into one key-based reducer
+* [redux-storage](https://github.com/michaelcontento/redux-storage) lets us save redux state tree to localStorage
 
 ### Build
 * [webpack](http://webpack.github.io/) bundles our application
 * [webpack-dev-server](https://webpack.github.io/docs/webpack-dev-server.html) an easy-to-use local dev server with hot module reloading
-* [HTMLWebpackPlugin](https://github.com/ampedandwired/html-webpack-plugin) simplifies creation of our app bundle's HTML files
-* [style-loader](https://github.com/webpack/style-loader), [sass-loader](https://github.com/jtangelder/sass-loader) and [less-loader](https://github.com/webpack/less-loader) to allow import of stylesheets in plain css, sass and less
+* [HtmlWebpackPlugin](https://github.com/ampedandwired/html-webpack-plugin) simplifies creation of our app bundle's HTML files
+* [style-loader](https://github.com/webpack/style-loader), [css-loader](https://github.com/webpack/css-loader),
+[stylus-loader](https://github.com/shama/stylus-loader), [sass-loader](https://github.com/jtangelder/sass-loader) and [less-loader](https://github.com/webpack/less-loader) to allow import of stylesheets in plain css, stylus, sass and less
 
 ### Code quality
 * [eslint](http://eslint.org) to maintain a consistent code style
-* [tape](https://github.com/substack/tape) TAP-producing test harness for Javascript
-* [faucet](https://github.com/substack/faucet) human-readable TAP summarizer
+* [AVA](https://github.com/avajs/ava) futuristic test runner for javascript
 * [sinon](http://sinonjs.org/) standalone spies, stubs and mocks
-* [nyc](https://github.com/istanbuljs/nyc) coverage reporting
+* [nyc](https://github.com/istanbuljs/nyc) coverage reporting for apps that spawn subprocesses
 * [enzyme](https://github.com/airbnb/enzyme) React component testing
 * [Redux Dev Tools](https://github.com/gaearon/redux-devtools) for next generation developer experience
 * [Redux Test Recorder](https://github.com/conorhastings/redux-test-recorder) automagically generate tests for your reducers based on the actions in your app
+* [raven-js](https://github.com/getsentry/raven-js) allows us to log client app errors to [Sentry](https://getsentry.com)
+* [nock](https://github.com/node-nock/nock) HTTP mocking library
 
 ## More Info
-For an explanation of the patterns used, see [PATTERNS.md](PATTERNS.md). To get started using Reify, see [STARTUP.md](STARTUP.md). To learn how to contribute, see [CONTRIBUTING.md](CONTRIBUTING.md).
+For an explanation of the patterns used, see [PATTERNS.md](PATTERNS.md). To get started using Reify, see [STARTUP.md](STARTUP.md). To learn how the demo app works, see [DEMO.md](DEMO.md). To learn how to contribute, see [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ###### *[Big Idea](https://thenounproject.com/mediatemple/collection/big-idea-collection/?i=13680) graphic was designed by [Edward Boatman](https://thenounproject.com/edward) and is in the [public domain](https://creativecommons.org/publicdomain/zero/1.0/)*
