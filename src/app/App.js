@@ -13,7 +13,7 @@ const App = (props) => {
 
       {/* a helmet is a thing for your head - see https://github.com/nfl/react-helmet */}
       <Helmet
-        htmlAttributes={{'lang': 'en'}} 
+        htmlAttributes={{'lang': 'en'}}
         title='Reify'
         titleTemplate='CashStar - %s'
         base={{'target': '_blank', 'href': 'http://localhost:8080'}}

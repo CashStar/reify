@@ -7,7 +7,8 @@ import App from './App';
 
 function mapStateToProps(state) {
   return {
-
+    // foo: state.foo,
+    // bar: state.bar
   }
 }
 

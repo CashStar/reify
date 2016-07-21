@@ -7,6 +7,11 @@ import appRoutes from 'app/appRoutes';
 import { sentryUrl, logException } from 'utils/sentryConfig';
 
 
+/*
+ * Main entry point for our app - anything in here will
+ * execute when the app starts up
+ */
+
 // set up Raven for logging errors to Sentry
 Raven.config(sentryUrl, {
   // custom properties, like git commit and user level
@@ -19,12 +24,12 @@ Raven.config(sentryUrl, {
 // other stuff you can do -->
 
 // you can log an exception by doing this!
-/*logException(new Error('download failed!'), {
-  email: 'foo@bar.com'
+/*logException(new Error('you are hemorrhaging users!'), {
+  email: 'cdicelico@cashstar.com'
 });*/
 
 // captureMessage lets you log some arbitrary message to sentry
-// Raven.captureMessage('something bad');
+// Raven.captureMessage('something bad happened and YOU are to blame!');
 
 // show user a report dialog when something bad happens
 // Raven.showReportDialog();
