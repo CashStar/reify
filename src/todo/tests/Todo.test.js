@@ -5,12 +5,12 @@ import utils from 'react-addons-test-utils';
 
 import { shallow } from 'enzyme';
 
-import AppHeader from '../AppHeader';
+import Todo from '../Todo';
 
 
 // throw a shallow-rendered version of the component into each test's context
 test.beforeEach(t => {
-  t.context.wrapper = shallow(<AppHeader />);
+  t.context.wrapper = shallow(<Todo />);
 });
 
 // test that our component renders (it has no errors)
