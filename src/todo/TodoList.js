@@ -6,8 +6,8 @@ import TaskForm from './TaskForm';
 import TodoInfo from './TodoInfo';
 
 //temp
-import todos from './todoData';
-const todoList = todos.toJS();
+import todoLists from './todoData';
+const todoList = todoLists.toJS()[0];
 
 
 const TodoList = (props) => {
