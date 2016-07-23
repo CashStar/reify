@@ -9,11 +9,11 @@ import TodoForm from '../TodoForm';
 
 
 // throw a shallow-rendered version of the component into each test's context
-test.beforeEach(t => {
+test.beforeEach((t) => {
   t.context.wrapper = shallow(<TodoForm />);
 });
 
 // test that our component renders (it has no errors)
-test('renders', t => {
+test('renders', (t) => {
   t.not(t.context.wrapper, null);
 });

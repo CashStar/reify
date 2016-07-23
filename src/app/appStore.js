@@ -6,14 +6,14 @@ import { browserHistory } from 'react-router';
 import appReducer from './appReducer';
 
 
-const defaultState = Map();
+const defaultState = new Map();
 //const middleware = {};
 
 // enhancers can be passed in to createStore for applying
 // middle ware and all kinds of things
 const enhancers = compose(
   // applyMiddleware(...middleware),
-  typeof window === 'object' && typeof window.devToolsExtension !== 'undefined' ? window.devToolsExtension() : f => f
+  typeof window === 'object' && typeof window.devToolsExtension !== 'undefined' ? window.devToolsExtension() : (f) => f
 );
 
 // Create enhanced history object for react-router immutable compatibility
