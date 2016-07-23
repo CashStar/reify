@@ -17,3 +17,7 @@ test.beforeEach(t => {
 test('renders', t => {
   t.not(t.context.wrapper, null);
 });
+
+test.skip('renders correctly', t => {
+  t.true(t.context.wrapper.hasClass('todo'));
+});

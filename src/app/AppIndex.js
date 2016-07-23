@@ -1,12 +1,13 @@
 import React from 'react';
 
+import TodoGrid from '../todo/TodoGrid';
+
 
 const AppIndex = (props) => {
   return (
-    <div className='columns'>
-      <div className='column'></div>
-      <div className='column'><p className='notification is-info'>homepage content</p></div>
-      <div className='column'></div>
+    <div className='app-index'>
+      <h1>Your To-do Lists</h1>
+      <TodoGrid {...props} />
     </div>
   );
 };

@@ -31,12 +31,19 @@ const App = (props) => {
         ]}
       />
 
-      {/* put some basic layout  stuff that applies to all children here */}
+      {/* full-width app header */}
       <AppHeader {...props} />
 
-      {/* important! this lets us propagate our props all the way down! */}
-      {/* see https://facebook.github.io/react/docs/top-level-api.html#react.cloneelement */}
-      {React.cloneElement(props.children, { ...props })}
+      {/* put some basic layout stuff that applies to all children here */}
+      <div className='columns'>
+        <div className='column'></div>
+        <div className='column'>
+          {/* important! this lets us propagate our props all the way down! */}
+          {/* see https://facebook.github.io/react/docs/top-level-api.html#react.cloneelement */}
+          {React.cloneElement(props.children, { ...props })}
+        </div>
+        <div className='column'></div>
+      </div>
 
     </div>
   );

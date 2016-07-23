@@ -17,3 +17,8 @@ test.beforeEach(t => {
 test('renders', t => {
   t.not(t.context.wrapper, null);
 });
+
+// tests to ensure that our component renders correctly
+test('has a .appIndex div', t => {
+  t.true(t.context.wrapper.hasClass('app-header'));
+});

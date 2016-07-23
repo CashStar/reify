@@ -5,7 +5,7 @@ import { Link } from 'react-router';
 
 const AppHeader = (props) => {
   return (
-    <section className='hero is-primary is-bold'>
+    <section className='app-header hero is-primary is-bold'>
       <div className='hero-head'>
         <header className='nav'>
           <div className='container'>

@@ -5,6 +5,7 @@ import { Provider } from 'react-redux';
 import appDispatcher from './appDispatcher';
 import appStore, { appHistory } from './appStore';
 import AppIndex from './AppIndex';
+import TodoList from '../todo/TodoList';
 
 
 const appRoutes = (
@@ -12,6 +13,7 @@ const appRoutes = (
     <Router history={appHistory}>
       <Route path="/" component={appDispatcher}>
         <IndexRoute component={AppIndex} />
+        <Route path="/todos" component={TodoList} />
       </Route>
     </Router>
   </Provider>
