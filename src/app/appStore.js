@@ -1,18 +1,18 @@
 import { Map } from 'immutable';
 import { createStore, applyMiddleware, compose } from 'redux';
-import { syncHistoryWithStore } from 'react-router-redux';
+import { push, routerMiddleware, syncHistoryWithStore } from 'react-router-redux';
 import { browserHistory } from 'react-router';
 
 import appReducer from './appReducer';
 
 
 const defaultState = new Map();
-//const middleware = {};
+const middleware = routerMiddleware(browserHistory);
 
 // enhancers can be passed in to createStore for applying
 // middle ware and all kinds of things
 const enhancers = compose(
-  // applyMiddleware(...middleware),
+  applyMiddleware(...middleware),
   typeof window === 'object' && typeof window.devToolsExtension !== 'undefined' ? window.devToolsExtension() : (f) => f
 );
 

@@ -6,6 +6,8 @@ import appDispatcher from './appDispatcher';
 import appStore, { appHistory } from './appStore';
 import AppIndex from './AppIndex';
 import TodoList from '../todo/TodoList';
+import TodoGrid from '../todo/TodoGrid';
+import NotFound from './NotFound';
 
 
 const appRoutes = (
@@ -13,7 +15,10 @@ const appRoutes = (
     <Router history={appHistory}>
       <Route path="/" component={appDispatcher}>
         <IndexRoute component={AppIndex} />
-        <Route path="/todos" component={TodoList} />
+        <Route path="todos" component={AppIndex} />
+        <Route path="todos/:todoId" component={TodoList} />
+        <Route path="notfound" component={NotFound} />
+        <Route path="*" component={NotFound} />
       </Route>
     </Router>
   </Provider>

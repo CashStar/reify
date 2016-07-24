@@ -17,7 +17,7 @@ const todoLists = List.of(
     id: 2,
     name: 'Meetings',
     tasks: List.of(
-      new Map({id: 6, text: 'Follow up with Sofia about the SMM campaign', status: 'active', editing: false}),
+      new Map({id: 6, text: 'Follow up with Sofia about SMM', status: 'active', editing: false}),
       new Map({id: 7, text: 'Discuss survey results with Alex', status: 'active', editing: false}),
       new Map({id: 8, text: 'Chat with Josh about user testing', status: 'completed', editing: false})
     )

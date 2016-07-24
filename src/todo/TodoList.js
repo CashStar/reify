@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { Map, List } from 'immutable';
 
 import Task from './Task';
@@ -7,10 +8,50 @@ import TodoInfo from './TodoInfo';
 
 //temp
 import todoLists from './todoData';
-const todoList = todoLists.toJS()[0];
 
+
+const TodoContent = (props) => {
+  const { todoList } = props;
+
+  const filteredTasks = (tasks) => {
+    return tasks.filter((task) => task.get('status') === props.filter);
+  };
+
+  return (
+    <div className='tile is-vertical is-parent control'>
+      {/* tasklist info bar tile */}
+      <TodoInfo todoList={todoList} />
+
+      {/* enter a new task for this todo list */}
+      <TaskForm />
+
+      {/* tasks - each task list item is one tile */}
+      <ul className='task-list'>
+      {todoList.tasks.map((task) =>
+        <Task task={task} key={task.id} index={task.id} />
+      )}
+      </ul>
+    </div>
+  );
+};
+
+const TodoNotFound = (props) => {
+  return (
+    <div className='tile is-vertical is-parent control'>
+      <h1 className='title'>Todo list not found!</h1>
+    </div>
+  );
+};
 
 const TodoList = (props) => {
+  const { todoId } = props.params,
+    lists = todoLists.toJS(),
+    todoList = lists.filter((list) => list.id === parseInt(todoId))[0];
+
+  const todoContent = typeof(todoList) === 'undefined' ?
+    <TodoNotFound /> :
+    <TodoContent todoList={todoList} />;
+
   return (
     <section className='todo-list section'>
       <div className='container'>
@@ -22,22 +63,9 @@ const TodoList = (props) => {
           <div className='column box'>
             <div className='tile'>
               <div className='tile is-ancestor'>
-                <div className='tile is-vertical is-parent control'>
 
-                  {/* tasklist info bar tile */}
-                  <TodoInfo todoList={todoList} />
+                {todoContent}
 
-                  {/* enter a new task for this todo list */}
-                  <TaskForm />
-
-                  {/* tasks - each task list item is one tile */}
-                  <ul className='task-list'>
-                    {todoList.tasks.map((task) =>
-                      <Task task={task} key={task.id} index={task.id} />
-                    )}
-                  </ul>
-
-                </div>
               </div>
             </div>
           </div>

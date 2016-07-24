@@ -4,7 +4,7 @@ import React from 'react';
 const TodoGrid = (props) => {
   return (
     <section className='todo-grid'>
-      <p className='notification is-warning'>todolist content</p>
+      <p className='notification is-warning'>Grid of todo lists</p>
     </section>
   );
 };

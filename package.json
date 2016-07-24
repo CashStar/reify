@@ -76,10 +76,11 @@
     "clean": "rimraf dist",
     "lint": "eslint src",
     "start": "NODE_ENV=development webpack-dev-server --config webpack.config.dev.js --colors --history-api-fallback --progress --inline --watch --hot --debug",
-    "test": "ava --no-cache --verbose",
+    "test": "ava --no-cache",
     "test:watch": "npm test -- --watch"
   },
   "ava": {
+    "concurrency": 8,
     "files": [
       "./src/**/tests/*.test.js"
     ],
