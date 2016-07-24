@@ -14,7 +14,7 @@ test.beforeEach((t) => {
 });
 
 // test that our component renders (it has no errors)
-test('renders', (t) => {
+test.skip('renders', (t) => {
   t.not(t.context.wrapper, null);
 });
 

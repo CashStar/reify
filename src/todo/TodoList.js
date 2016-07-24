@@ -28,7 +28,7 @@ const TodoList = (props) => {
                   <TodoInfo todoList={todoList} />
 
                   {/* enter a new task for this todo list */}
-                  <TaskForm {...props} />
+                  <TaskForm />
 
                   {/* tasks - each task list item is one tile */}
                   <ul className='task-list'>

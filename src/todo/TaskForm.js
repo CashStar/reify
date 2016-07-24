@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-const Task = (props) => {
+const TaskForm = (props) => {
   return (
     <p className='control has-icon has-icon-right'>
       <input autoFocus={true} className='add-task input is-large' type='text' placeholder='Add a task' />
@@ -10,4 +10,4 @@ const Task = (props) => {
   );
 };
 
-export default Task;
+export default TaskForm;

@@ -4,7 +4,7 @@ import React from 'react';
 const TodoInfo = (props) => {
   const { todoList } = props;
   return (
-    <div className='tile is-child level'>
+    <div className='todo-info tile is-child level'>
       <div className='level-left'>
         <div className='level-item'>
           <p className='title'>{todoList.name}</p>

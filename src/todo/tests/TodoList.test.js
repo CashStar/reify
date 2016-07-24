@@ -1,36 +1,37 @@
 import React from 'react';
 import sinon from 'sinon';
 import test from 'ava';
-import utils from 'react-addons-test-utils';
+import TestUtils from 'react-addons-test-utils';
 
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
+import { List, Map } from 'immutable';
 
 import TodoList from '../TodoList';
+import todoLists from '../todoData';
 
 
-// throw a shallow-rendered version of the component into each test's context
+const { renderIntoDocument, scryRenderedDOMComponentsWithTag } = TestUtils;
+
 test.beforeEach((t) => {
-  t.context.wrapper = shallow(
-    <TodoList />
-  );
-});
+  const todoList = todoLists.toJS()[0],
+    filter = 'active';
 
-// test that our component renders (it has no errors)
-test('renders', (t) => {
-  t.not(t.context.wrapper, null);
+    t.context.component = renderIntoDocument(
+      <TodoList todoList={todoList} filter={filter} />
+    );
+
+    console.log(t.context.component);
+
 });
 
 test('renders correctly', (t) => {
-  t.true(t.context.wrapper.hasClass('todo-list'));
+  t.not(t.context.component, null);
+  t.true(t.context.component.hasClass('todo-list'));
+  t.is(t.context.component.find('TodoInfo').length, 1);
+  t.is(t.context.component.find('TaskForm').length, 1);
+  t.true(t.context.component.find('ul').hasClass('task-list'));
 });
 
-// test that we are rendering the correct child components
-test('renders children when passed in', (t) => {
-  const wrapper = shallow(
-    <TodoList>
-      <div className='unique'></div>
-    </TodoList>
-  );
-
-  t.true(wrapper.contains(<div className='unique'></div>));
+test('renders active items by default', (t) => {
+  t.is(t.context.wrapper.find('Task').length, 2)
 });
