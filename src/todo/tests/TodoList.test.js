@@ -6,27 +6,44 @@ import TestUtils from 'react-addons-test-utils';
 import { shallow } from 'enzyme';
 import { List, Map } from 'immutable';
 
-import TodoList from '../TodoList';
+import TodoList, { TodoContent } from '../TodoList';
 import todoLists from '../todoData';
 
 
-test.beforeEach((t) => {
-  const todoList = todoLists.toJS()[0],
-    filter = 'active';
+const createTodoList = (t, filter = 'active', params = {todoId: '1'}) => {
+  t.context.wrapper = shallow(
+    <TodoList params={params} filter={filter} />
+  );
+};
+
+const createTodoContent = (t, filter = 'active') => {
+  const todoList = todoLists.toJS()[0];
 
   t.context.wrapper = shallow(
-    <TodoList todoList={todoList} filter={filter} />
+    <TodoContent todoList={todoList} filter={filter} />
   );
-});
+};
 
-test('renders correctly', (t) => {
+test('TodoList renders without errors', (t) => {
+  createTodoList(t);
   t.not(t.context.wrapper, null);
   t.true(t.context.wrapper.hasClass('todo-list'));
-  t.is(t.context.wrapper.find('TodoInfo').length, 1);
-  t.is(t.context.wrapper.find('TaskForm').length, 1);
-  t.true(t.context.wrapper.find('ul').hasClass('task-list'));
 });
 
-test('renders active items by default', (t) => {
+test('TodoList renders correct component when passed a known good todoId', (t) => {
+  createTodoList(t);
+  t.is(t.context.wrapper.find('TodoContent').length, 1);
+  t.is(t.context.wrapper.find('TodoNotFound').length, 0);
+});
+
+test('TodoList renders correct component when when passed a known bad todoId', (t) => {
+  createTodoList(t, 'active', {todoId: '999'});
+
+  t.is(t.context.wrapper.find('TodoNotFound').length, 1);
+  t.is(t.context.wrapper.find('TodoContent').length, 0);
+});
+
+test('TodoContent renders active items by default', (t) => {
+  createTodoContent(t);
   t.is(t.context.wrapper.find('Task').length, 2)
 });

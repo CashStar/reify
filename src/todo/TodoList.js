@@ -10,12 +10,13 @@ import TodoInfo from './TodoInfo';
 import todoLists from './todoData';
 
 
-const TodoContent = (props) => {
-  const { todoList } = props;
+// exported for testing only
+export const TodoContent = (props) => {
+  const { todoList, filter } = props;
 
   const filteredTasks = (tasks) => {
-    return tasks.filter((task) => task.get('status') === props.filter);
-  };
+    return tasks.filter((task) => task.status === filter);
+  };  
 
   return (
     <div className='tile is-vertical is-parent control'>
@@ -27,7 +28,7 @@ const TodoContent = (props) => {
 
       {/* tasks - each task list item is one tile */}
       <ul className='task-list'>
-      {todoList.tasks.map((task) =>
+      {filteredTasks(todoList.tasks).map((task) =>
         <Task task={task} key={task.id} index={task.id} />
       )}
       </ul>
