@@ -8,6 +8,17 @@ make something abstract more concrete or real
 
 ---
 
+## Quick Start Guide
+
+```bash
+npm i # install project dependencies
+npm start # run local development server at http://localhost:8080
+npm test # run tests
+npm run test:watch # run tests in watch mode
+npm run lint # run linter
+npm run cover # run coverage report
+```
+
 ## About
 Reify is an opinionated boilerplate for [non-universal](https://medium.com/@mjackson/universal-javascript-4761051b7ae9) (client-only) React apps, configured with best practices and a curated selection of libraries from the React ecosystem.
 
