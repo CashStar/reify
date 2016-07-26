@@ -32,8 +32,8 @@ test('TodoList renders without errors', (t) => {
 
 test('TodoList renders correct component when passed a known good todoId', (t) => {
   createTodoList(t);
-  t.is(t.context.wrapper.find('TodoContent').length, 1);
   t.is(t.context.wrapper.find('TodoNotFound').length, 0);
+  t.is(t.context.wrapper.find('TodoContent').length, 1);
 });
 
 test('TodoList renders correct component when when passed a known bad todoId', (t) => {
@@ -43,7 +43,19 @@ test('TodoList renders correct component when when passed a known bad todoId', (
   t.is(t.context.wrapper.find('TodoContent').length, 0);
 });
 
-test('TodoContent renders active items by default', (t) => {
+test('TodoContent renders active items when the filter is active', (t) => {
   createTodoContent(t);
   t.is(t.context.wrapper.find('Task').length, 2)
+});
+
+
+test('TodoContent renders all items when the filter is all', (t) => {
+  createTodoContent(t, 'all');
+  t.is(t.context.wrapper.find('Task').length, 5)
+});
+
+
+test('TodoContent renders completed items when the filter is completed', (t) => {
+  createTodoContent(t, 'completed');
+  t.is(t.context.wrapper.find('Task').length, 3)
 });

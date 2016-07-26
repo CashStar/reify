@@ -10,25 +10,25 @@ import TodoInfo from './TodoInfo';
 import todoLists from './todoData';
 
 
-// exported for testing only
+// named export for testing purposes only!
 export const TodoContent = (props) => {
   const { todoList, filter } = props;
 
-  const filteredTasks = (tasks) => {
-    return tasks.filter((task) => task.status === filter);
-  };  
+  const filterTasks = (tasks) => {
+    return tasks.filter((task) => filter === 'all' || task.status === filter);
+  };
 
   return (
     <div className='tile is-vertical is-parent control'>
       {/* tasklist info bar tile */}
-      <TodoInfo todoList={todoList} />
+      <TodoInfo todoList={todoList} filter={filter} />
 
       {/* enter a new task for this todo list */}
       <TaskForm />
 
       {/* tasks - each task list item is one tile */}
       <ul className='task-list'>
-      {filteredTasks(todoList.tasks).map((task) =>
+      {filterTasks(todoList.tasks).map((task) =>
         <Task task={task} key={task.id} index={task.id} />
       )}
       </ul>
@@ -47,11 +47,12 @@ const TodoNotFound = (props) => {
 const TodoList = (props) => {
   const { todoId } = props.params,
     lists = todoLists.toJS(),
-    todoList = lists.filter((list) => list.id === parseInt(todoId))[0];
+    todoList = lists.filter((list) => list.id === parseInt(todoId))[0],
+    filter = 'all';
 
   const todoContent = typeof(todoList) === 'undefined' ?
     <TodoNotFound /> :
-    <TodoContent todoList={todoList} />;
+    <TodoContent todoList={todoList} filter={filter} />;
 
   return (
     <section className='todo-list section'>
