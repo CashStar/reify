@@ -38,7 +38,6 @@ test('TodoList renders correct component when passed a known good todoId', (t) =
 
 test('TodoList renders correct component when when passed a known bad todoId', (t) => {
   createTodoList(t, 'active', {todoId: '999'});
-
   t.is(t.context.wrapper.find('TodoNotFound').length, 1);
   t.is(t.context.wrapper.find('TodoContent').length, 0);
 });

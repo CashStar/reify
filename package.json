@@ -77,7 +77,9 @@
     "lint": "eslint src",
     "start": "NODE_ENV=development webpack-dev-server --config webpack.config.dev.js --colors --history-api-fallback --progress --inline --watch --hot --debug",
     "test": "ava --no-cache",
-    "test:watch": "npm test -- --watch"
+    "test:watch": "npm test -- --watch",
+    "test:verbose": "npm test -- --verbose",
+    "test:werbose": "npm test -- --watch --verbose"
   },
   "ava": {
     "concurrency": 8,
