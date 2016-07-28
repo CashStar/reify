@@ -1,10 +1,20 @@
 import React from 'react';
+import classnames from 'classnames';
 
 
 const Task = (props) => {
-  const { task } = props;
+  const { task, isCompleted, isEditing } = props;
+  const itemClass = classnames({
+    'todo': true,
+    'task': true,
+    'tile': true,
+    'is-child': true,
+    'completed': isCompleted,
+    'editing': isEditing
+  });
+
   return (
-      <li className='task tile is-child'>
+      <li className={itemClass}>
         <label className='title' htmlFor='toggle-task'>
           <input className='toggle-task is-large' type='checkbox' />
           {task.text}

@@ -6,18 +6,27 @@ import utils from 'react-addons-test-utils';
 import { shallow } from 'enzyme';
 
 import Task from '../Task';
+import todoLists from '../todoData';
 
 
-// throw a shallow-rendered version of the component into each test's context
+const myTask = todoLists.toJS()[0].tasks[0];
+
 test.beforeEach((t) => {
-  t.context.wrapper = shallow(<Task />);
+  t.context.wrapper = shallow(<Task task={myTask} />);
 });
 
-// test that our component renders (it has no errors)
-test.skip('renders', (t) => {
+test('Task renders without errors', (t) => {
+  t.context.wrapper.setProps({ isCompleted: false, isEditing: false })
   t.not(t.context.wrapper, null);
+  t.true(t.context.wrapper.hasClass('task'));
 });
 
-test.skip('renders correctly', (t) => {
-  t.true(t.context.wrapper.hasClass('todo'));
+test('Task renders items correctly when completed', (t) => {
+  t.context.wrapper.setProps({ isCompleted: true, isEditing: false })
+  t.true(t.context.wrapper.hasClass('completed'));
+});
+
+test('Task renders items correctly when being edited', (t) => {
+  t.context.wrapper.setProps({ isCompleted: false, isEditing: true })
+  t.true(t.context.wrapper.hasClass('editing'));
 });
