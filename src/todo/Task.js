@@ -16,7 +16,8 @@ const Task = (props) => {
   return (
       <li className={itemClass}>
         <label className='title' htmlFor='toggle-task'>
-          <input className='toggle-task is-large' type='checkbox' />
+          <input className='toggle-task is-large' type='checkbox'
+            defaultChecked={isCompleted} />
           {task.text}
         </label>
       </li>

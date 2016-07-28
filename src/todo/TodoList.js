@@ -18,6 +18,10 @@ export const TodoContent = (props) => {
     return tasks.filter((task) => filter === 'all' || task.status === filter);
   };
 
+  const isCompleted = (task) => {
+      return task.status === 'completed';
+  };
+
   return (
     <div className='tile is-vertical is-parent control'>
       {/* tasklist info bar tile */}
@@ -29,7 +33,8 @@ export const TodoContent = (props) => {
       {/* tasks - each task list item is one tile */}
       <ul className='task-list'>
       {filterTasks(todoList.tasks).map((task) =>
-        <Task task={task} key={task.id} index={task.id} />
+        <Task task={task} key={task.id} index={task.id}
+          isCompleted={isCompleted(task)} isEditing={task.editing} />
       )}
       </ul>
     </div>

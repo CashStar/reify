@@ -18,13 +18,13 @@ test.beforeEach((t) => {
 });
 
 test('TodoList renders without errors', (t) => {
-  t.context.wrapper.setProps({ filter: 'active', params: { todoId: '1' } });
+  t.context.wrapper.setProps({ filter: 'active' });
   t.not(t.context.wrapper, null);
   t.true(t.context.wrapper.hasClass('todo-list'));
 });
 
 test('TodoList renders correct component when passed a known good todoId', (t) => {
-  t.context.wrapper.setProps({ filter: 'active', params: { todoId: '1' } });
+  t.context.wrapper.setProps({ filter: 'active' });
   t.is(t.context.wrapper.find('TodoNotFound').length, 0);
   t.is(t.context.wrapper.find('TodoContent').length, 1);
 });
