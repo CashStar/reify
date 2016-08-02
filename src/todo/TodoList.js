@@ -23,7 +23,7 @@ export const TodoContent = (props) => {
   };
 
   return (
-    <div className='tile is-vertical is-parent control'>
+    <div className='tile is-vertical is-parent'>
       {/* tasklist info bar tile */}
       <TodoInfo todoList={todoList} filter={filter} />
 
@@ -31,10 +31,16 @@ export const TodoContent = (props) => {
       <TaskForm />
 
       {/* tasks - each task list item is one tile */}
-      <ul className='task-list'>
+      <ul className='task-list tile is-child'>
       {filterTasks(todoList.tasks).map((task) =>
-        <Task task={task} key={task.id} index={task.id}
-          isCompleted={isCompleted(task)} isEditing={task.editing} />
+        <Task task={task}
+          key={task.id}
+          index={task.id}
+          isCompleted={isCompleted(task)}
+          isEditing={task.editing}
+          toggleComplete={props.toggleComplete}
+          deleteItem={props.deleteItem}
+          editItem={props.editItem} />
       )}
       </ul>
     </div>

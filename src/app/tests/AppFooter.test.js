@@ -5,5 +5,14 @@ import utils from 'react-addons-test-utils';
 
 import { shallow } from 'enzyme';
 
+import AppFooter from '../AppFooter';
 
-test.todo('renders');
+
+test.beforeEach((t) => {
+  t.context.wrapper = shallow(<AppFooter />);
+});
+
+test('footer renders correctly with default props', (t) => {
+  t.not(t.context.wrapper, null);
+  t.true(t.context.wrapper.hasClass('footer'));
+});

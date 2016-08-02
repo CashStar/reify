@@ -15,11 +15,7 @@ test.beforeEach((t) => {
 });
 
 // test that our component renders (it has no errors)
-test('renders', (t) => {
+test('renders correctly with default props', (t) => {
   t.not(t.context.wrapper, null);
-});
-
-// tests to ensure that our component renders correctly
-test('has a .appIndex div', (t) => {
   t.true(t.context.wrapper.hasClass('app-index'));
 });
