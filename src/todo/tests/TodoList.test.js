@@ -17,7 +17,7 @@ test.beforeEach((t) => {
   t.context.wrapper = shallow(<TodoList todoList={todoList} params={params} />);
 });
 
-test('TodoList renders without errors', (t) => {
+test('TodoList renders correctly with default props', (t) => {
   t.context.wrapper.setProps({ filter: 'active' });
   t.not(t.context.wrapper, null);
   t.true(t.context.wrapper.hasClass('todo-list'));
