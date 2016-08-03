@@ -49,7 +49,7 @@ export const TodoContent = (props) => {
 
 const TodoNotFound = (props) => {
   return (
-    <div className='tile is-vertical is-parent control'>
+    <div className='tile is-vertical is-parent'>
       <h1 className='title'>Todo list not found!</h1>
     </div>
   );

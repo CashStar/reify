@@ -10,7 +10,7 @@ const defaultState = new Map();
 const middleware = routerMiddleware(browserHistory);
 
 // enhancers can be passed in to createStore for applying
-// middle ware and all kinds of things
+// middleware and all kinds of things
 const enhancers = compose(
   applyMiddleware(...middleware),
   typeof window === 'object' && typeof window.devToolsExtension !== 'undefined' ? window.devToolsExtension() : (f) => f

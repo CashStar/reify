@@ -48,7 +48,7 @@ test('Task renders correctly when editing a completed task', (t) => {
 test('Task invokes deleteItem callback when delete button is clicked', (t) => {
   const deleteItem = sinon.spy();
 
-  t.context.wrapper.setProps({deleteItem: deleteItem});
+  t.context.wrapper.setProps({ deleteItem });
 
   t.context.wrapper.find('.destroy').simulate('click');
   t.true(deleteItem.called);
@@ -58,7 +58,7 @@ test('Task invokes deleteItem callback when delete button is clicked', (t) => {
 test('Task invokes toggleComplete callback when checkbox is clicked', (t) => {
   const toggleComplete = sinon.spy();
 
-  t.context.wrapper.setProps({toggleComplete: toggleComplete});
+  t.context.wrapper.setProps({ toggleComplete });
 
   t.context.wrapper.find('.toggle-task').simulate('click');
   t.true(toggleComplete.called);
@@ -67,7 +67,7 @@ test('Task invokes toggleComplete callback when checkbox is clicked', (t) => {
 test('Task invokes edit callback when text field is double-clicked', (t) => {
   const editItem = sinon.spy();
 
-  t.context.wrapper.setProps({editItem: editItem});
+  t.context.wrapper.setProps({ editItem });
 
   t.context.wrapper.find('.title').simulate('doubleClick');
   t.true(editItem.called);
