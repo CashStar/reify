@@ -11,10 +11,21 @@ make something abstract more concrete or real
 ## Quick Start Guide
 
 ```bash
+# general maintenance
+brew update; brew upgrade # update nodejs and npm
+npm update -g # update global node modules
+npm i -g npm-check-updates # use this to keep npm modules up-to-date
+ncu # check for dependency updates
+
+# dev tasks
 npm i # install project dependencies
 npm start # run local development server at http://localhost:8080
+
+# testing
 npm test # run tests
 npm run test:watch # run tests in watch mode
+npm run test:verbose # extra output
+npm run test:werbose # watch mode, extra output
 npm run lint # run linter
 npm run cover # run coverage report
 ```
