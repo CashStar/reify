@@ -65,6 +65,7 @@
     "stylus": "^0.54.5",
     "stylus-loader": "^2.1.1",
     "webpack": "^1.13.1",
+    "webpack-dashboard": "0.0.1",
     "webpack-dev-server": "^1.14.1"
   },
   "scripts": {
@@ -74,7 +75,7 @@
     "check-coverage": "nyc check-coverage --statements 100 --branches 100 --functions 100 --lines 100",
     "clean": "rimraf dist",
     "lint": "eslint src",
-    "start": "NODE_ENV=development webpack-dev-server --config webpack.config.dev.js --colors --history-api-fallback --progress --inline --watch --hot --debug",
+    "start": "NODE_ENV=development webpack-dev-server --config webpack.config.dev.js --colors --history-api-fallback --progress --inline --watch --hot --quiet",
     "test": "ava --no-cache",
     "test:watch": "npm test -- --watch",
     "test:verbose": "npm test -- --verbose",
