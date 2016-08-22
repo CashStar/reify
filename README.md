@@ -40,7 +40,9 @@ It's set up with TDD in mind and is configured with hot module reloading enabled
 * [Redux](https://github.com/rackt/redux), Facebook's futuristic [Flux](https://facebook.github.io/react/blog/2014/05/06/flux.html) implementation, to manage app state
 * [react-router-redux](https://github.com/reactjs/react-router-redux) syncs routes with our state tree
 * [redux-form](https://github.com/erikras/redux-form) to manage form state in Redux
+* [redux-immutable](https://github.com/gajus/redux-immutable) to make redux work with Immutable.js state
 * [redux-saga](https://github.com/yelouafi/redux-saga) keeps all side effects in a single place
+* [redux-storage](https://github.com/michaelcontento/redux-storage) to store application state in localStorage
 * [immutable](https://facebook.github.io/immutable-js/) gives us immutable data structures
 * [axios](https://github.com/mzabriskie/axios) promises-based HTTP client
 * [react-helmet](https://github.com/nfl/react-helmet) to manage title and meta tag info
@@ -66,6 +68,7 @@ It's set up with TDD in mind and is configured with hot module reloading enabled
 * [raven-js](https://github.com/getsentry/raven-js) allows us to log client app errors to [Sentry](https://getsentry.com)
 * [nock](https://github.com/node-nock/nock) HTTP mocking library
 * [jsdom](https://github.com/tmpvar/jsdom) mock the DOM
+* [webpack-dashboard](https://github.com/FormidableLabs/webpack-dashboard) prettify webpack output
 
 ## More Info
 For an explanation of the patterns used, see [PATTERNS.md](PATTERNS.md). To get started using Reify, see [STARTUP.md](STARTUP.md). To learn how the demo app works, see [DEMO.md](DEMO.md). To learn how to contribute, see [CONTRIBUTING.md](CONTRIBUTING.md).

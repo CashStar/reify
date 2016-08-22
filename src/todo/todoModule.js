@@ -1,46 +1,24 @@
-import { Map } from 'immutable';
+import { Map, fromJS } from 'immutable';
+
 
 // Actions
-/*const LOAD   = 'my-app/widgets/LOAD';
-const CREATE = 'my-app/widgets/CREATE';
-const UPDATE = 'my-app/widgets/UPDATE';
-const REMOVE = 'my-app/widgets/REMOVE';
-*/
-const SET_INITIAL_STATE = 'reify/todo/todoModule/SET_INITIAL_STATE';
+const SET_STATE = 'reify/todo/todoModule/SET_STATE';
 
 // Reducer
-/*export default function reducer(state = {}, action = {}) {
-  switch (action.type) {
-    // do reducer stuff
-    default: return state;
-  }
-}*/
-
 export default function reducer(state = new Map(), action) {
   switch (action.type) {
-    case 'SET_INITIAL_STATE':
-      return setInitialState(state, action.state);
+    case 'SET_STATE':
+      // here, we're calling fromJS on action.state to convert it to an
+      // Immutable Map before passing it to setState in case someone tries
+      // to pass a plain JS object, instead... tsk, tsk!
+      // yes, it's fine to call fromJS on something that's already Immutable
+      return setState(state, fromJS(action.state));
   }
   return state;
 }
 
-export function setInitialState(state, newState) {
+// Action Creators
+export function setState(state, newState){
+  const nextState = state.merge(newState);
   return state.merge(newState);
 }
-
-// Action Creators
-/*export function loadWidget(widget) {
-  return { type: LOAD };
-}
-
-export function createWidget(widget) {
-  return { type: CREATE, widget };
-}
-
-export function updateWidget(widget) {
-  return { type: UPDATE, widget };
-}
-
-export function removeWidget(widget) {
-  return { type: REMOVE, widget };
-}*/
