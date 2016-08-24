@@ -1,4 +1,4 @@
-![](https://bitbucket.org/cashstar/reify/raw/master/reify.png)
+<img src='https://github.com/carlodicelico/reify/blob/master/reify.png>
 
 # re·i·fy /ˈrēəˌfī/
 
@@ -20,18 +20,20 @@ npm run cover # run coverage report
 ```
 
 ## About
-Reify is an opinionated boilerplate for [non-universal](https://medium.com/@mjackson/universal-javascript-4761051b7ae9) (client-only) React apps, configured with best practices and a curated selection of libraries from the React ecosystem.
+Reify is an opinionated boilerplate for [non-universal](https://medium.com/@mjackson/universal-javascript-4761051b7ae9) (client-only) React apps, configured with best practices and patterns and a curated selection of libraries from the React ecosystem.
 
 ### Goals
 Reify's goals are focused primarily on developer experience and code quality. It aims to:
 
-* make it quick and easy to start building
-* encourage best practices
+* make it quick and easy to learn React+Redux and start building
+* encourage best practices and design patterns
 * help you write well-tested, maintainable React apps
 * allow you to build the client in isolation
-* make it easy to go from development to production
+* make it easy to go from learning and prototyping to building production-quality apps 
 
 It's set up with TDD in mind and is configured with hot module reloading enabled for a painless developer experience. It also includes a simple demo app that you can examine and learn from.
+
+For an explanation of the patterns used, see [PATTERNS.md](PATTERNS.md). To learn how the demo app works, see [DEMO.md](DEMO.md). To learn how to contribute, see [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ### Core libraries
 * [Babel](https://babeljs.io/) lets us use future JS language features now
@@ -69,8 +71,5 @@ It's set up with TDD in mind and is configured with hot module reloading enabled
 * [nock](https://github.com/node-nock/nock) HTTP mocking library
 * [jsdom](https://github.com/tmpvar/jsdom) mock the DOM
 * [webpack-dashboard](https://github.com/FormidableLabs/webpack-dashboard) prettify webpack output
-
-## More Info
-For an explanation of the patterns used, see [PATTERNS.md](PATTERNS.md). To get started using Reify, see [STARTUP.md](STARTUP.md). To learn how the demo app works, see [DEMO.md](DEMO.md). To learn how to contribute, see [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ###### *[Big Idea](https://thenounproject.com/mediatemple/collection/big-idea-collection/?i=13680) graphic was designed by [Edward Boatman](https://thenounproject.com/edward) and is in the [public domain](https://creativecommons.org/publicdomain/zero/1.0/)*

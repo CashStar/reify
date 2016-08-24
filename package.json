@@ -11,8 +11,12 @@
     "redux-saga"
   ],
   "main": "src/index.js",
-  "author": "Carlo DiCelico",
-  "license": "ISC",
+  "author": "Carlo DiCelico <carlodicelico@me.com> (https://github.com/carlodicelico)",
+  "homepage": "https://github.com/carlodicelico/reify",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/carlodicelico/reify/issues"
+  },
   "dependencies": {
     "axios": "^0.13.1",
     "classnames": "^2.2.5",
