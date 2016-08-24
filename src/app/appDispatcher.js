@@ -1,15 +1,14 @@
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
-import * as actions from './appActions';
+import * as actions from '../todo/todoModule';
 import App from './App';
 
 
 function mapStateToProps(state) {
   return {
-    // foo: state.foo,
-    // bar: state.bar
-  }
+    todos: state.get('todos')
+  };
 }
 
 function mapDispatchToProps(dispatch) {

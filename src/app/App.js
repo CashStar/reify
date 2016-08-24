@@ -4,6 +4,8 @@ import Helmet from 'react-helmet';
 import { Link } from 'react-router';
 
 import AppHeader from './AppHeader';
+import AppFooter from './AppFooter';
+
 
 // a container to hold our head info and act as our app's main entry point
 // in app/appDispatcher - don't alter this unless you know what you're doing!
@@ -31,12 +33,16 @@ const App = (props) => {
         ]}
       />
 
-      {/* put some basic layout  stuff that applies to all children here */}
+      {/* full-width app header */}
       <AppHeader {...props} />
 
+      {/* put some basic layout stuff that applies to all children here */}
       {/* important! this lets us propagate our props all the way down! */}
       {/* see https://facebook.github.io/react/docs/top-level-api.html#react.cloneelement */}
       {React.cloneElement(props.children, { ...props })}
+
+      {/* full-width app footer */}
+      <AppFooter {...props} />
 
     </div>
   );

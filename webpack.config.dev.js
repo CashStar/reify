@@ -2,6 +2,9 @@
 const webpack = require('webpack'),
   path = require('path'),
   HtmlWebpackPlugin = require('html-webpack-plugin');
+  Dashboard = require('webpack-dashboard'),
+  DashboardPlugin = require('webpack-dashboard/plugin'),
+  dashboard = new Dashboard();
 
 // create some convenience variables to make using these things later on a bit easier
 const resolve = path.resolve // handle to path.resolve()
@@ -54,7 +57,8 @@ config = {
     ]
   },
   plugins: [ // tell webpack to use our configured plugins
-    HtmlWebpackPluginConfig
+    HtmlWebpackPluginConfig,
+    new DashboardPlugin(dashboard.setData)
   ]
 };
 

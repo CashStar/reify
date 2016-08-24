@@ -5,17 +5,19 @@ import utils from 'react-addons-test-utils';
 
 import { shallow } from 'enzyme';
 
-import AppIndex from '../AppIndex';
-
+import TodoGrid from '../TodoGrid';
 
 
 // throw a shallow-rendered version of the component into each test's context
 test.beforeEach((t) => {
-  t.context.wrapper = shallow(<AppIndex />);
+  t.context.wrapper = shallow(<TodoGrid />);
 });
 
 // test that our component renders (it has no errors)
-test('renders correctly with default props', (t) => {
+test('renders', (t) => {
   t.not(t.context.wrapper, null);
-  t.true(t.context.wrapper.hasClass('app-index'));
+});
+
+test('renders correctly', (t) => {
+  t.true(t.context.wrapper.hasClass('todo-grid'));
 });

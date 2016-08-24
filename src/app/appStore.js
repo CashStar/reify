@@ -1,19 +1,22 @@
-import { Map } from 'immutable';
+import createSagaMiddleware from 'redux-saga';
+
+import { Map, fromJS } from 'immutable';
 import { createStore, applyMiddleware, compose } from 'redux';
-import { syncHistoryWithStore } from 'react-router-redux';
+import { push, routerMiddleware, syncHistoryWithStore } from 'react-router-redux';
 import { browserHistory } from 'react-router';
 
 import appReducer from './appReducer';
+import todoLists from '../todo/todoData';
 
 
-const defaultState = Map();
-//const middleware = {};
+const defaultState = new Map();
+const middleware = [ routerMiddleware(browserHistory), createSagaMiddleware ];
 
 // enhancers can be passed in to createStore for applying
-// middle ware and all kinds of things
+// middleware and all kinds of things
 const enhancers = compose(
-  // applyMiddleware(...middleware),
-  typeof window === 'object' && typeof window.devToolsExtension !== 'undefined' ? window.devToolsExtension() : f => f
+  applyMiddleware(...middleware),
+  typeof window === 'object' && typeof window.devToolsExtension !== 'undefined' ? window.devToolsExtension() : (f) => f
 );
 
 // Create enhanced history object for react-router immutable compatibility
@@ -34,6 +37,14 @@ const appStore = createStore(appReducer, defaultState, enhancers);
 // here, we sync our redux store with our browserHistory
 export const appHistory = syncHistoryWithStore(browserHistory, appStore, {
   selectLocationState: createSelectLocationState()
+});
+
+// initialize our app state with sensible defaults
+appStore.dispatch({
+  type: 'SET_STATE',
+  state: {
+    todos: fromJS(todoLists)
+  }
 });
 
 export default appStore;

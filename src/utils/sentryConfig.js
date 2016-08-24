@@ -2,8 +2,8 @@ import Raven from 'raven-js';
 
 
 // set up a key and app ID for your own app here
-const sentryKey = 'aa0d4d289ea7413b995205439117a0fa';
-const sentryApp = '87623';
+const sentryKey = '';
+const sentryApp = '';
 
 // build our sentryUrl
 export const sentryUrl = `https://${sentryKey}@app.getsentry.com/${sentryApp}`;
