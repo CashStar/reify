@@ -1,6 +1,8 @@
 # Contributing
 
-We are open to, and grateful for, any contributions made by the community. By contributing to Redux, you agree to abide by the [code of conduct](https://github.com/carlodicelico/reify/blob/master/CONDUCT.md).
+We are open to, and grateful for, any contributions made by the community. By contributing to reify, you agree to abide by the [code of conduct](https://github.com/carlodicelico/reify/blob/master/CONDUCT.md).
+
+We use the [fork and pull](https://help.github.com/articles/types-of-collaborative-development-models/#fork--pull) collaboration model. Learn how to [create a pull request on Github](https://help.github.com/articles/creating-a-pull-request/).
 
 ## Reporting Issues and Asking Questions
 
