@@ -13,13 +13,13 @@ import { sentryUrl, logException } from 'utils/sentryConfig';
  */
 
 // set up Raven for logging errors to Sentry
-Raven.config(sentryUrl, {
+/*Raven.config(sentryUrl, {
   // custom properties, like git commit and user level
   tags: {
     git_commit: 'foo',
     userLevel: 'editor'
   }
-}).install();
+}).install();*/
 
 // other stuff you can do -->
 
