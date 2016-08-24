@@ -13,7 +13,8 @@ import todoReducer from '../todo/todoModule';
  */
 const appReducer = combineReducers({
   routing: routerReducer,
-  form: formReducer
+  form: formReducer,
+  todoReducer
 });
 
 export default appReducer;

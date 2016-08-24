@@ -2,6 +2,14 @@
   "name": "reify",
   "version": "1.0.0",
   "description": "An opinionated boilerplate for client-only React apps",
+  "keywords": [
+    "react",
+    "redux",
+    "immutable",
+    "ava",
+    "axios",
+    "redux-saga"
+  ],
   "main": "src/index.js",
   "author": "Carlo DiCelico",
   "license": "ISC",

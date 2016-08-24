@@ -1,11 +1,9 @@
 import React from 'react';
-import sinon from 'sinon';
 import test from 'ava';
 
-import { shallow } from 'enzyme';
 import { Map } from 'immutable';
 
-import reducer, { setState } from '../todoModule';
+import reducer from '../todoModule';
 import todoLists from '../todoData';
 
 

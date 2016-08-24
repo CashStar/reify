@@ -9,27 +9,30 @@ const TOGGLE_COMPLETE = 'reify/todo/todoModule/TOGGLE_COMPLETE';
 export default function reducer(state = new Map(), action) {
   switch (action.type) {
     case 'SET_STATE':
-      return setState(state, fromJS(action.state));
+      return setInitialState(state, fromJS(action.state));
     case 'TOGGLE_COMPLETE':
-      return toggleComplete(state, action.listId, action.taskId);
+      return toggleStatus(state, action.listId, action.taskId);
     default: return state;
   }
 }
 
-function setState(state, newState) {
+function setInitialState(state, newState) {
   return state.merge(newState);
 }
 
-function toggleComplete(state, listId, taskId) {
+function toggleStatus(state, listId, taskId) {
   const todoLists = state.get('todos');
 
   const listIndex = todoLists.findIndex(
     (list) => list.get('id') === listId
   );
 
-  const taskIndex = todoLists.get(listIndex).get('tasks').findIndex(
-    (task) => task.get('id') === taskId
-  );
+  const taskIndex = todoLists
+    .get(listIndex)
+    .get('tasks')
+    .findIndex(
+      (task) => task.get('id') === taskId
+    );
 
   const updatedTask = state
     .get('todos')
@@ -43,10 +46,10 @@ function toggleComplete(state, listId, taskId) {
 }
 
 // Action Creators
-export function setInitialState(newState) {
+export function setState(newState) {
   return { type: SET_STATE, newState };
 }
 
-export function toggleStatus(taskId, listId) {
+export function toggleComplete(taskId, listId) {
   return { type: TOGGLE_COMPLETE, taskId, listId };
 }
