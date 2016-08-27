@@ -3,12 +3,11 @@ import Helmet from 'react-helmet';
 
 import { Link } from 'react-router';
 
-import AppHeader from './AppHeader';
-import AppFooter from './AppFooter';
+import Header from '../header/Header';
+import Footer from '../footer/Footer';
 
 
 // a container to hold our head info and act as our app's main entry point
-// in app/appDispatcher - don't alter this unless you know what you're doing!
 const App = (props) => {
   return (
     <div className='app'>
@@ -17,7 +16,7 @@ const App = (props) => {
       <Helmet
         htmlAttributes={{'lang': 'en'}}
         title='Reify'
-        titleTemplate='CashStar - %s'
+        titleTemplate='Reify - %s'
         base={{'target': '_blank', 'href': 'http://localhost:8080'}}
         meta={[
             {'name': 'charset', 'content': 'utf-8'},
@@ -25,7 +24,7 @@ const App = (props) => {
             {'name': 'description', 'content': 'An opinionated boilerplate for React apps'},
         ]}
         link={[
-            {'rel': 'canonical', 'href': 'https://bitbucket.org/cashstar/reify'},
+            {'rel': 'canonical', 'href': 'https://github.com/carlodicelico/reify'},
             {'rel': 'stylesheet', 'href': 'https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic'},
             {'rel': 'stylesheet', 'href': 'https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css'},
             {'rel': 'stylesheet', 'href': 'https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css'},
@@ -34,7 +33,7 @@ const App = (props) => {
       />
 
       {/* full-width app header */}
-      <AppHeader {...props} />
+      <Header {...props} />
 
       {/* put some basic layout stuff that applies to all children here */}
       {/* important! this lets us propagate our props all the way down! */}
@@ -42,7 +41,7 @@ const App = (props) => {
       {React.cloneElement(props.children, { ...props })}
 
       {/* full-width app footer */}
-      <AppFooter {...props} />
+      <Footer {...props} />
 
     </div>
   );

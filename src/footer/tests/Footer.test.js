@@ -1,15 +1,13 @@
 import React from 'react';
-import sinon from 'sinon';
 import test from 'ava';
-import utils from 'react-addons-test-utils';
 
 import { shallow } from 'enzyme';
 
-import AppFooter from '../AppFooter';
+import Footer from '../Footer';
 
 
 test.beforeEach((t) => {
-  t.context.wrapper = shallow(<AppFooter />);
+  t.context.wrapper = shallow(<Footer />);
 });
 
 test('footer renders correctly with default props', (t) => {

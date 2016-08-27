@@ -1,10 +1,7 @@
 import React from 'react';
-import sinon from 'sinon';
 import test from 'ava';
-import TestUtils from 'react-addons-test-utils';
 
 import { shallow } from 'enzyme';
-import { List, Map } from 'immutable';
 
 import TodoList, { TodoContent } from '../TodoList';
 import todoLists from '../todoData';

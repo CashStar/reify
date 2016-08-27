@@ -3,7 +3,7 @@ import React from 'react';
 import { Link } from 'react-router';
 
 
-const AppHeader = (props) => {
+const Header = (props) => {
   return (
     <header className='app-header hero is-danger is-bold'>
       <div className='hero-head'>
@@ -34,4 +34,4 @@ const AppHeader = (props) => {
   );
 };
 
-export default AppHeader;
+export default Header;

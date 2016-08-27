@@ -7,7 +7,7 @@ import appStore, { appHistory } from './appStore';
 import AppIndex from './AppIndex';
 import TodoList from '../todo/TodoList';
 import TodoGrid from '../todo/TodoGrid';
-import NotFound from './NotFound';
+import NotFound from '../notfound/NotFound';
 
 
 const appRoutes = (
