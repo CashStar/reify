@@ -3,7 +3,7 @@ import React from 'react';
 import TodoGrid from '../todo/TodoGrid';
 
 
-const AppIndex = (props) => {
+const Index = (props) => {
   return (
     <div className='app-index'>
       <h1>Your To-do Lists</h1>
@@ -12,4 +12,4 @@ const AppIndex = (props) => {
   );
 };
 
-export default AppIndex;
+export default Index;

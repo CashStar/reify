@@ -3,13 +3,13 @@ import test from 'ava';
 
 import { shallow } from 'enzyme';
 
-import AppIndex from '../AppIndex';
+import Index from '../Index';
 
 
 
 // throw a shallow-rendered version of the component into each test's context
 test.beforeEach((t) => {
-  t.context.wrapper = shallow(<AppIndex />);
+  t.context.wrapper = shallow(<Index />);
 });
 
 // test that our component renders (it has no errors)

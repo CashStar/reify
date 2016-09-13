@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 
 import appDispatcher from './appDispatcher';
 import appStore, { appHistory } from './appStore';
-import AppIndex from './AppIndex';
+import Index from '../index/Index';
 import TodoList from '../todo/TodoList';
 import TodoGrid from '../todo/TodoGrid';
 import NotFound from '../notfound/NotFound';
@@ -14,8 +14,8 @@ const appRoutes = (
   <Provider store={appStore}>
     <Router history={appHistory}>
       <Route path="/" component={appDispatcher}>
-        <IndexRoute component={AppIndex} />
-        <Route path="todos" component={AppIndex} />
+        <IndexRoute component={Index} />
+        <Route path="todos" component={Index} />
         <Route path="todos/:todoId" component={TodoList} />
         <Route path="notfound" component={NotFound} />
         <Route path="*" component={NotFound} />
