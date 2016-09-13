@@ -2,7 +2,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
 import * as actions from '../todo/todoModule';
-import App from '../index/App';
+import App from '../App';
 
 
 // this is where we connect our app's props to our redux state tree
