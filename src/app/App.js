@@ -9,6 +9,12 @@ import Footer from '../footer/Footer';
 
 // a container to hold our head info and act as our app's main entry point
 const App = (props) => {
+
+  // see https://facebook.github.io/react/docs/top-level-api.html#react.cloneelement
+  // map over children, calling cloneElement to propagate props down to children;
+  // this accounts for null children
+  const children = React.Children.map(props.children, (child) => React.cloneElement(child, props));
+
   return (
     <div className='app'>
 
@@ -36,9 +42,7 @@ const App = (props) => {
       <Header {...props} />
 
       {/* put some basic layout stuff that applies to all children here */}
-      {/* important! this lets us propagate our props all the way down! */}
-      {/* see https://facebook.github.io/react/docs/top-level-api.html#react.cloneelement */}
-      {React.cloneElement(props.children, { ...props })}
+      { children }
 
       {/* full-width app footer */}
       <Footer {...props} />
