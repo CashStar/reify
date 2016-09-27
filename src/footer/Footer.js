@@ -10,8 +10,8 @@ const Footer = (props) => {
             <strong>Reify</strong> by <a href='https://github.com/carlodicelico'>Carlo DiCelico</a>
           </p>
           <p>
-            <a href='https://bitbucket.org/cashstar/reify' className='icon' target='_blank'>
-              <i className='fa fa-bitbucket'></i>
+            <a href='https://github.com/carlodicelico/reify' className='icon' target='_blank'>
+              <i className='fa fa-github'></i>
             </a>
           </p>
         </div>

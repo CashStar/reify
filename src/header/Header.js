@@ -20,10 +20,10 @@ const Header = (props) => {
               <span></span>
             </span>
             <div className='nav-right nav-menu'>
-              <a href='https://bitbucket.org/cashstar/reify' target='_blank' className='nav-item is-active'>
-                See Reify on Bitbucket
+              <a href='https://github.com/carlodicelico/reify' target='_blank' className='nav-item is-active'>
+                See Reify on Github
                 <span className='icon'>
-                  <i className='fa fa-bitbucket'></i>
+                  <i className='fa fa-github'></i>
                 </span>
               </a>
             </div>
