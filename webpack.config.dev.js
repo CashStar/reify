@@ -1,7 +1,7 @@
 // require webpack, path and HtmlWebpackPlugin to start
 const webpack = require('webpack'),
   path = require('path'),
-  HtmlWebpackPlugin = require('html-webpack-plugin');
+  HtmlWebpackPlugin = require('html-webpack-plugin'),
   Dashboard = require('webpack-dashboard'),
   DashboardPlugin = require('webpack-dashboard/plugin'),
   dashboard = new Dashboard();
