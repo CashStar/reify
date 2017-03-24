@@ -1,4 +1,4 @@
-![Logo](https://github.com/carlodicelico/reify/blob/master/reify.png)
+![Logo](https://gitlab.com/carlodicelico/reify/raw/master/reify.png)
 
 # re·i·fy /ˈrēəˌfī/
 
